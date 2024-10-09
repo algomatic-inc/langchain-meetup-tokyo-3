@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "langchain-api"
+version = "0.1.0"
+description = ""
+authors = ["kosuke.ito <kosuke.ito@algomatic.jp>"]
+packages = [
+    { include = "langchain_api", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain-core = "^0.3.6"
+langchain = "^0.3.1"
+langchain-community = "^0.3.1"
+langchain-openai = "^0.2.1"
+langserve = {extras = ["all"], version = "^0.3.0"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+pyproject-flake8 = "^7.0.0"
+pip-licenses = "^5.0.0"
+
+[tool.poetry.scripts]
+example-server = "langchain_api.server:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"

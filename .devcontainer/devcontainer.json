@@ -1,0 +1,43 @@
+{
+	"name": "poetry3-poetry-pyenv",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"ms-python.flake8",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter",
+					"notebook.defaultFormatter": "ms-python.black-formatter"
+				},
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit"
+				},
+				"notebook.codeActionsOnSave": {
+					"source.organizeImports": "explicit"
+				},
+				"notebook.formatOnSave.enabled": true,
+				"python.defaultInterpreterPath": ".venv/bin/python",
+				"flake8.path": [
+					".venv/bin/pflake8"
+				],
+				"flake8.importStrategy": "fromEnvironment",
+				"black-formatter.importStrategy": "fromEnvironment",
+				"isort.importStrategy": "fromEnvironment"
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"remoteUser": "vscode",
+	"postCreateCommand": "poetry install"
+}
