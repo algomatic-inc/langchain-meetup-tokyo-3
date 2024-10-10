@@ -4,7 +4,7 @@ LangChain Meetup Tokyo #3で登壇発表した「LangChain & LangServeでAPIを�
 
 ## 実行方法
 
-- `pip install https://github.com/algomatic-inc/langchain-meetup-tokyo-3.git`を実行
+- `pip install git+https://github.com/algomatic-inc/langchain-meetup-tokyo-3.git`を実行
 - `example-server`を実行
 - `http://localhost:8000/xxx`にアクセス
 
